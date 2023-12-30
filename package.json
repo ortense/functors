@@ -41,7 +41,8 @@
     "typescript",
     "type-safe",
     "monad",
-    "monads"
+    "monads",
+    "maybe"
   ],
   "license": "MIT",
   "devDependencies": {
