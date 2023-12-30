@@ -1,0 +1,64 @@
+{
+  "name": "@ortense/functors",
+  "version": "0.0.0",
+  "description": "A collection of dependency free functors written in typescript",
+  "author": "Marcus Ortense",
+  "homepage": "https://ortense.github.io/functors",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ortense/functors"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:coverage": "vitest run --coverage",
+    "build": "tsup --minify",
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix src",
+    "doc": "typedoc",
+    "change": "changeset"
+  },
+  "keywords": [
+    "functors",
+    "functional",
+    "functional programming",
+    "fp",
+    "typescript",
+    "type-safe",
+    "monad",
+    "monads"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "@typescript-eslint/parser": "^6.16.0",
+    "@vitest/coverage-v8": "^1.1.0",
+    "eslint": "^8.56.0",
+    "tsup": "^8.0.1",
+    "typedoc": "^0.25.4",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.0"
+  },
+  "files": [
+    "./dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ]
+}
