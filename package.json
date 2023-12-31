@@ -42,7 +42,8 @@
     "type-safe",
     "monad",
     "monads",
-    "maybe"
+    "maybe",
+    "lazy"
   ],
   "license": "MIT",
   "devDependencies": {
