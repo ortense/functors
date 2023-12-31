@@ -6,26 +6,24 @@
  * ```
  * // Create a Lazy instance that represents the computation of doubling a number.
  * const lazyDouble = Lazy.create(() => {
- *   console.log('Doubling...');
- *   return 21 * 2;
- * });
+ *   console.log('Doubling...')
+ *   return 21 * 2
+ * })
  *
  * // Evaluate the Lazy, triggering the computation.
- * const result1 = lazyDouble.evaluate(); // Output: Doubling...
- * console.log(result1); // Output: 42
+ * const result1 = lazyDouble.evaluate() // Output: Doubling...
+ * console.log(result1) // Output: 42
  *
  * // Evaluate the Lazy again, but the computation is not triggered (value is cached).
- * const result2 = lazyDouble.evaluate();
- * console.log(result2); // Output: 42
+ * const result2 = lazyDouble.evaluate()
+ * console.log(result2) // Output: 42
  *
  * // Map the Lazy to triple the value.
- * const lazyTriple = lazyDouble.map(value => value * 3);
+ * const lazyTriple = lazyDouble.map(value => value * 3)
  *
  * // Evaluate the new Lazy, triggering the mapped computation.
- * 
- * const result3 = lazyTriple.evaluate(); // Output: Doubling...
- * console.log(result3); // Output: 126
- * ```
+ * const result3 = lazyTriple.evaluate() // Output: Doubling...
+ * console.log(result3) // Output: 126
  * 
  * // Use async operations
  * const getUsers = fetch('https://jsonplaceholder.typicode.com/users')
@@ -34,6 +32,7 @@
  *  .map(users => users.map(user => user.email))
  * 
  * const result4 = await lazyMailList.evaluate()
+ * ```
  */
 export class Lazy<T> {
   /**
