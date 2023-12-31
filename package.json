@@ -43,7 +43,9 @@
     "monad",
     "monads",
     "maybe",
-    "lazy"
+    "lazy",
+    "history",
+    "state"
   ],
   "license": "MIT",
   "devDependencies": {
