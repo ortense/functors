@@ -1,3 +1,6 @@
 export * from './Maybe/Maybe'
 export * from './Lazy/Lazy'
 export * from './History/History'
+export * from './Either/Either'
+export * from './Either/Left'
+export * from './Either/Right'

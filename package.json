@@ -45,7 +45,8 @@
     "maybe",
     "lazy",
     "history",
-    "state"
+    "state",
+    "either"
   ],
   "license": "MIT",
   "devDependencies": {
