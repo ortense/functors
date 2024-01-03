@@ -17,32 +17,34 @@ export class Left<L, R> implements Either<L, R> {
   private constructor(private val: L) {}
 
   /**
-   * Static method to create an instance of Left.
+   * Static method to create an instance of Right.
+   * @template L - The type of the left side.
+   * @template R - The type of the right side.
    * @param {L} value - The value on the left side.
-   * @returns {Left} An instance of Left.
+   * @returns {Either<L, R>} An instance of Left.
    */
-  static create<L, R>(value: L) {
-    return new Left<L, R>(value);
+  static create<L, R>(value: L): Either<L, R> {
+    return new Left<L, R>(value)
   }
 
   left<T>(fn: (value: L) => T): Either<T, R> {
-    return new Left<T, R>(fn(this.val));
+    return new Left<T, R>(fn(this.val))
   }
 
   right<T>(fn: (value: R) => T): Either<L, T> {
-    return this as unknown as Either<L, T>;
+    return this as unknown as Either<L, ReturnType<typeof fn>>
   }
 
   isLeft() {
-    return true;
+    return true
   }
 
   isRight() {
-    return false;
+    return false
   }
 
   unwrap() {
-    return this.val;
+    return this.val
   }
 }
 
