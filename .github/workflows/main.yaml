@@ -5,29 +5,29 @@ on: ["push", "pull_request"]
 jobs:
   continuous-integration:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      
+
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20.x
-      
+
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 8
-      
+
       - name: Intall Dependencies
         run: pnpm install
-      
+
       - name: Build
         run: pnpm build
 
       - name: Run tests
         run: pnpm test:coverage
-      
+
       - name: Coveralls
         uses: coverallsapp/github-action@v2
