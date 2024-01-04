@@ -1,5 +1,11 @@
 # @ortense/functors
 
+## 0.1.1
+
+### Patch Changes
+
+- bdc5790: Correction of the install instructions
+
 ## 0.1.0
 
 ### Minor Changes
