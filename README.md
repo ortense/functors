@@ -20,10 +20,10 @@ This project is a TypeScript library that embraces the functor concept, offering
 Pick your favorite package manager.
 
 ```sh
-npm install @ortense/mediator  # npm
-yarn add  @ortense/mediator    # yarn
-pnpm add @ortense/mediator     # pnpm
-bun add @ortense/mediator      # bun
+npm install @ortense/functors  # npm
+yarn add  @ortense/functors    # yarn
+pnpm add @ortense/functors     # pnpm
+bun add @ortense/functors      # bun
 ```
 
 ## Implemented Functors
