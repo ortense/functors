@@ -1,6 +1,6 @@
 {
   "name": "@ortense/functors",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A collection of dependency free functors written in typescript",
   "author": "Marcus Ortense",
   "homepage": "https://ortense.github.io/functors",
