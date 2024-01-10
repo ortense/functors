@@ -1,5 +1,11 @@
 # @ortense/functors
 
+## 0.2.0
+
+### Minor Changes
+
+- 2cb1f53: Add methods flat and flatMap to Maybe
+
 ## 0.1.1
 
 ### Patch Changes
