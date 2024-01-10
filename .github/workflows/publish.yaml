@@ -37,6 +37,9 @@ jobs:
 
       - name: Run tests
         run: pnpm test
+      
+      - name: Generate docs
+        run: pnpm doc && git add docs
 
       - name: Create Release Pull Request or Publish
         id: changesets

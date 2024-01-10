@@ -33,7 +33,7 @@
     "lint:fix": "eslint --fix src",
     "doc": "typedoc",
     "change": "changeset",
-    "release": "tsup --minify && typedoc && changeset publish --access public"
+    "release": "changeset publish"
   },
   "keywords": [
     "functors",
