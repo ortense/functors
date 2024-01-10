@@ -61,5 +61,35 @@ describe('Maybe', () => {
         expect(maybeVal.unwrap()).toBe(value)
       })
     })
+
+    describe('.flat', () => {
+      it('should flatten a Maybe with nested Maybe', () => {
+        const nestedMaybe = maybe(maybe('nested value'))
+        const flattenedMaybe = nestedMaybe.flat()
+        expect(flattenedMaybe.unwrap()).toBe('nested value')
+      })
+
+      it('should not modify a Maybe with non-nested value', () => {
+        const maybeStr = maybe('non-nested value')
+        const flattenedMaybe = maybeStr.flat()
+        expect(flattenedMaybe.unwrap()).toBe('non-nested value')
+      })
+    })
+
+    describe('.flatMap', () => {
+      it('should apply mapping function and flatten the result', () => {
+        const maybeVal = maybe('value')
+        const fn = (val: string) => maybe(val.toUpperCase())
+        const resultMaybe = maybeVal.flatMap(fn)
+        expect(resultMaybe.unwrap()).toBe('VALUE')
+      })
+
+      it('should apply function to nested value', () => {
+        const maybeStr = maybe(maybe('nested value'))
+        const fn = (val: string) => val.toUpperCase()
+        const resultMaybe = maybeStr.flatMap(fn)
+        expect(resultMaybe.unwrap()).toBe('NESTED VALUE')
+      })
+    })
   })
 })

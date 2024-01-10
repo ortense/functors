@@ -1,4 +1,11 @@
 /**
+ * Obtains the wrapped type of a Maybe instance, if it exists.
+ * otherwise, returns the original type.
+ * @template T - The type of the Maybe instance.
+ */
+export type MaybeValueType<T> = T extends Maybe<infer U> ? U : T
+
+/**
  * Represents a container that may or may not contain a value of type T.
  * @class Maybe
  * @template T - The type of the value.
@@ -68,6 +75,29 @@ export class Maybe<T> {
    */
   unwrap(): T | null | undefined {
     return this.value
+  }
+
+  /**
+   * Flattens a Maybe instance by removing one level of nesting, if applicable.
+   * If the internal value is a Maybe instance, returns that instance directly;
+   * otherwise, returns the original Maybe instance.
+   * @returns {Maybe<MaybeValueType<T>>} A new Maybe instance with one level of nesting removed.
+   */
+  flat(): Maybe<MaybeValueType<T>> {
+    if (this.value instanceof Maybe) {
+      return this.value
+    }
+    return this as unknown as Maybe<MaybeValueType<T>>
+  }
+
+  /**
+   * Maps the wrapped value of Maybe using a provided function and then flattens the result.
+   * @template R - The type of the result after applying the function.
+   * @param {function(MaybeValueType<T>): R} fn - The mapping function to apply to the internal value.
+   * @returns {Maybe<R>} A new Maybe instance containing the result of applying the function.
+   */
+  flatMap<R>(fn: (value: MaybeValueType<T>) => R): Maybe<MaybeValueType<R>> {
+    return this.flat().map(fn).flat()
   }
 }
 
