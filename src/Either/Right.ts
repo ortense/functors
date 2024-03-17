@@ -1,4 +1,4 @@
-import { Either } from './Either'
+import { Either } from './Either.ts'
 
 /**
  * Represents the right side of an Either type.
@@ -35,15 +35,15 @@ export class Right<L, R> implements Either<L, R> {
     return new Right<L, T>(fn(this.val))
   }
 
-  isLeft() {
+  isLeft(): boolean {
     return false
   }
 
-  isRight() {
+  isRight(): boolean {
     return true
   }
 
-  unwrap() {
+  unwrap(): R {
     return this.val
   }
 }

@@ -26,6 +26,7 @@ npm install @ortense/functors  # npm
 yarn add  @ortense/functors    # yarn
 pnpm add @ortense/functors     # pnpm
 bun add @ortense/functors      # bun
+deno add @ortense/functors     # deno from jsr.io
 ```
 
 ## Implemented Functors

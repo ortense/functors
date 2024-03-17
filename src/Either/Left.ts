@@ -35,15 +35,15 @@ export class Left<L, R> implements Either<L, R> {
     return this as unknown as Either<L, ReturnType<typeof fn>>
   }
 
-  isLeft() {
+  isLeft(): boolean {
     return true
   }
 
-  isRight() {
+  isRight(): boolean {
     return false
   }
 
-  unwrap() {
+  unwrap(): L {
     return this.val
   }
 }

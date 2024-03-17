@@ -33,7 +33,7 @@ export class Maybe<T> {
    * @param {T | null | undefined} value - The value or absence of a value.
    * @returns {Maybe<T>} An instance of Maybe.
    */
-  static create<T>(value: T | null | undefined) {
+  static create<T>(value: T | null | undefined): Maybe<T> {
     return new Maybe(value)
   }
 
